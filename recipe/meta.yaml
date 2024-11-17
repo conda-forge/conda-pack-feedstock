@@ -23,7 +23,7 @@ requirements:
     - setuptools
   run:
     - setuptools
-    - python >={{ python_min }}
+    - python >={{ python_min }}
 
 test:
   commands:
