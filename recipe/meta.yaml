@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 388f7694c1b01f02efc6c4c310542e955ad69284b3ce452e5c83711f633463bc
+  sha256: a962ac16cfa8b61220a73f146fc53ddb94c5c4cb4c5ea64fdd63921cb4902fed
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
