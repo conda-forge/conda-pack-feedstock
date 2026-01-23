@@ -17,7 +17,6 @@ Documentation: https://conda.github.io/conda-pack/
 environments. This is useful for deploying code in a consistent environment,
 potentially in a location where python/conda isn't already installed.
 
-
 Current build status
 ====================
 
