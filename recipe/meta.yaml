@@ -1,5 +1,5 @@
 {% set name = "conda-pack" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: a962ac16cfa8b61220a73f146fc53ddb94c5c4cb4c5ea64fdd63921cb4902fed
+  sha256: a501e639dad99b48bc91d65c26d630638a8b91c846d89e52d8763eb4bf323976
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
