@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: conda-pack
+  version: 0.9.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/conda/${{ name }}/archive/${{ version }}.tar.gz
+  sha256: a501e639dad99b48bc91d65c26d630638a8b91c846d89e52d8763eb4bf323976
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+  python:
+    entry_points:
+      - conda-pack = conda_pack.cli:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - setuptools
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      python_version: ${{ python_min }}.*
+      imports:
+        - conda_pack
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - conda-pack --help
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: Package conda environments for redistribution
+  description: |
+    ``conda-pack`` is a command line tool for creating relocatable conda
+    environments. This is useful for deploying code in a consistent environment,
+    potentially in a location where python/conda isn't already installed.
+  homepage: https://conda.github.io/conda-pack/
+  repository: https://github.com/conda/conda-pack
+  documentation: https://conda.github.io/conda-pack/
+
+extra:
+  recipe-maintainers:
+    - jcrist
+    - mcg1969
+    - dbast
+    - xhochy
