@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: conda-pack
-  version: 0.9.1
+  version: "0.9.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/conda/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: a501e639dad99b48bc91d65c26d630638a8b91c846d89e52d8763eb4bf323976
+  sha256: c5933645407f3a8ad9bb4683b0f4ea2906b03af3afd2256e3b8c78b908a7b73d
 
 build:
   number: 0
